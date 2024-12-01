@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.config.jwtService;
@@ -21,7 +19,6 @@ import com.example.demo.entity.AuthRequest;
 import com.example.demo.entity.userInfo;
 import com.example.demo.service.userService;
 
-import jakarta.websocket.server.PathParam;
 
 @RestController
 @RequestMapping("/auths")
@@ -55,6 +52,7 @@ public class userController
 			if(authentic.isAuthenticated())
 			{
 				return jwts.generateToken(infos.getUserName());
+				//store in database tocken with Flag -----Login- Y,   Logout-N
 			}
 			else
 			{

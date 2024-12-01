@@ -12,7 +12,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class userinfoDetails implements UserDetails
 {
 
-	 String userName = null;
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	String userName = null;
 	 String password = null;
 	List<GrantedAuthority> author;
 

@@ -1,7 +1,6 @@
 package com.example.demo.config;
 
 import java.security.Key;
-import java.util.Base64.Decoder;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -66,6 +65,7 @@ public class jwtService
 	public Boolean validateToken(String token, UserDetails details)
 	{
 		final String username = extractUserNAme(token);
+		//connect with database find query
 		return (username.equals(details.getUsername()) && !isTokenExpire(token));
 	}
 }
